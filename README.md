@@ -2,6 +2,8 @@ Netcool alert processing issue classification:-
 
 Semi-supervised machine learning to derive actionable insight by reading historic data from Netcool reporter database and Intuition of auto classifying alerts based on event processing state it resulted previously and predicting it over real-time alarms for proactive actions.
 
+![concept](https://github.com/vishnuk88/processFailDiscovery/blob/master/img/concept.png)
+
 Solution description:-
 
 - A python code takes input from the CSV file of the alert dump and generates labeled clusters automatically using machine learning models. 
@@ -11,6 +13,7 @@ Solution description:-
 - Predicting for underlying process failures at live alerts via restful API query.  
 - Machine learning Algorithms used DBSCAN and Decision tree
 
+![flow](https://github.com/vishnuk88/processFailDiscovery/blob/master/img/flow.png)
 
 Deployment Instructions:-
 
