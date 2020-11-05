@@ -1,0 +1,64 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Machine learning - problematic event processing</title>
+      <script type="text/javascript" src="./w3template/nav.js"></script>							
+      <link href="./w3template/w3.css" rel="stylesheet" title="w3" type="text/css">
+
+</head>
+
+<body>
+      <div id="ibm-top" class="ibm-liquid">
+      <div id="ibm-masthead" class="ibm-w3-masthead" role="banner" style="left: 0px;">
+         <div id="ibm-mast-options" role="toolbar" aria-label="Masthead Navigation">
+<img src="./w3template/ibm_logo_print.png" width="65" height="40" id="ibm-print-masthead2" alt="IBM Print">
+         </div>
+		 <div id="ibm-universal-nav" role="navigation" aria-label="Site map"> 
+		 <p id="ibm-site-title">
+		 <em>Report of Auto discovered problematic event processing</em>
+
+		 </p> 
+            <div class="ibm-container-body" id="ibmweb_ribbon_0" >
+          <div class="ibm-ribbon-pane" style="height: 0px;"> </div>
+			   
+         </div>
+      </div>
+	  </div>
+	  </div>
+   <br>
+   
+<h1>Introduction:</h2>
+<br> An approach of reading historic data from Netcool reporter database and auto classify the alarms based on event processing status resulted previously.<br> 
+<br> <b>Know your environment</b> - Using Machine learning clustering algorithm historic alarms will be grouped based on the respective event processing status.<br> 
+<br> <b>Identify failures</b> - Perform sentiment analysis over the event processing status updates the respective results at alert fields which enables to identify problematic areas.<br> 
+<br> <b>Automatic failure area identification</b> – Failure areas are auto labled using kewords <b>ne-</b> represents sentiment result negative and <b> n- </b>represents sentiment result neutral.<br> 
+<br>
+<br> <i><b>Descion rule of thumb :-</b></i><br>
+<br>
+<br><b>1 - </b>Given alarm contains negative sentiment result for its any of the event processing states is considered as faulty event processing. <br>
+<br><b>2 - </b>Given alarm contains neutral sentiment result for half and more than half of the input status fields. <br>
+<br><b>3 - </b>Cluter numbered <b>-1</b> are called as outlier i.e new combination of issue is getting reported at env. <br>
+<br> <i><b>Usage from the predection :-</b></i><br>
+ <br> Missed event processing can be predected early by which required actions to address the event processing needs can be preformed (eg: Log collection for troubleshooting,Perform event processing manually to avoid busniess impact<br>
+        <h2>Discovered Issue lables:-</h2>
+     {{ dfNegativeDetails }}
+            <h2>Discovered Suspected lables:-</h2>
+     {{ dfSuspectDetails }}
+ <h2>Discovered Cluster wise percentage:-</h2>
+<img src="./graphs/problematicDonet.png" alt="Graph">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<img src="./graphs/suspectedDonet.png" alt="Graph">
+
+<br>
+<h2>Discovered Label wise percentage:-</h2>
+<img src="./graphs/problematicBar.png" alt="Graph">
+    <img src="./graphs/suspectedBar.png" alt="Graph">
+
+<br>
+<h2>Timeline view on discovered Label :-</h2>
+<img src="./graphs/issueTimeline.png" alt="Graph">
+<br>
+<img src="./graphs/suspectedalertsTimeline.png" alt="Graph">
+
+
+</body>
+</html>

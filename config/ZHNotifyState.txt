@@ -1,0 +1,14 @@
+{
+0: "None",
+1: "Required",
+2: "InProgress",
+3: "Successfully Delivered",
+4: "Successfully Acknowledged",
+5: "Failed",
+6: "SheduledWait ZHNotifyTime to expire",
+7: "Duplicate",
+10: "Waiting on Ticketing",
+8: "Successfully Closed",
+9: "Forced ticket update",
+11: "Successfully Completed Final"
+}

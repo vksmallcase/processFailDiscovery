@@ -1,0 +1,277 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Machine learning - problematic event processing</title>
+      <script type="text/javascript" src="./w3template/nav.js"></script>							
+      <link href="./w3template/w3.css" rel="stylesheet" title="w3" type="text/css">
+
+</head>
+
+<body>
+      <div id="ibm-top" class="ibm-liquid">
+      <div id="ibm-masthead" class="ibm-w3-masthead" role="banner" style="left: 0px;">
+         <div id="ibm-mast-options" role="toolbar" aria-label="Masthead Navigation">
+<img src="./w3template/ibm_logo_print.png" width="65" height="40" id="ibm-print-masthead2" alt="IBM Print">
+         </div>
+		 <div id="ibm-universal-nav" role="navigation" aria-label="Site map"> 
+		 <p id="ibm-site-title">
+		 <em>Report of Auto discovered problematic event processing</em>
+
+		 </p> 
+            <div class="ibm-container-body" id="ibmweb_ribbon_0" >
+          <div class="ibm-ribbon-pane" style="height: 0px;"> </div>
+			   
+         </div>
+      </div>
+	  </div>
+	  </div>
+   <br>
+   
+<h1>Introduction:</h2>
+<br> An approach of reading historic data from Netcool reporter database and auto classify the alarms based on event processing status resulted previously.<br> 
+<br> <b>Know your environment</b> - Using Machine learning clustering algorithm historic alarms will be grouped based on the respective event processing status.<br> 
+<br> <b>Identify failures</b> - Perform sentiment analysis over the event processing status updates the respective results at alert fields which enables to identify problematic areas.<br> 
+<br> <b>Automatic failure area identification</b> – Failure areas are auto labled using kewords <b>ne-</b> represents sentiment result negative and <b> n- </b>represents sentiment result neutral.<br> 
+<br>
+<br> <i><b>Descion rule of thumb :-</b></i><br>
+<br>
+<br><b>1 - </b>Given alarm contains negative sentiment result for its any of the event processing states is considered as faulty event processing. <br>
+<br><b>2 - </b>Given alarm contains neutral sentiment result for half and more than half of the input status fields. <br>
+<br><b>3 - </b>Cluter numbered <b>-1</b> are called as outlier i.e new combination of issue is getting reported at env. <br>
+<br> <i><b>Usage from the predection :-</b></i><br>
+ <br> Missed event processing can be predected early by which required actions to address the event processing needs can be preformed (eg: Log collection for troubleshooting,Perform event processing manually to avoid busniess impact<br>
+        <h2>Discovered Issue lables:-</h2>
+     <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>zprocessstate_t</th>
+      <th>zhnotifystate_t</th>
+      <th>zgenericactionstate_t</th>
+      <th>zticketstate_t</th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully RESOLVED</td>
+      <td>Failed Retry</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Failed</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Failed</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Failed</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>SheduledWait ZHNotifyTime to expire</td>
+      <td>Final Response Successfully RESOLVED</td>
+      <td>Failed Retry</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>None</td>
+      <td>A Remediation has been accepted</td>
+      <td>Failed Retry</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>None</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Failed</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Failed</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Completed Successfully</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Needed</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>None</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Failed Retry</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>Enrichment-done</td>
+      <td>Failed</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Completed Successfully</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Completed Successfully</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Failed Retry</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Failed</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Needed</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>Failed</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Completed Successfully</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Ticket or Notifications Actions Failed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Successfully Completed Final</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+            <h2>Discovered Suspected lables:-</h2>
+     <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>zprocessstate_t</th>
+      <th>zhnotifystate_t</th>
+      <th>zgenericactionstate_t</th>
+      <th>zticketstate_t</th>
+      <th>Cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>SheduledWait ZHNotifyTime to expire</td>
+      <td>Final Response Successfully RESOLVED</td>
+      <td>Failed Retry</td>
+      <td>33</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>None</td>
+      <td>A Remediation has been accepted</td>
+      <td>Failed Retry</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>SheduledWait ZHNotifyTime to expire</td>
+      <td>A Remediation has been accepted</td>
+      <td>Completed Successfully</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>Successfully Completed Final</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Needed</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <td>None</td>
+      <td>None</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Successfully Completed Final</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>None</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Completed Successfully</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>Successfully Delivered</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Needed</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>None</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Failed Retry</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>AllActions Completed successfully</td>
+      <td>None</td>
+      <td>A Remediation has been accepted</td>
+      <td>Needed</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>SheduledWait ZHNotifyTime to expire</td>
+      <td>Final Response Successfully RESOLVED</td>
+      <td>Successfully Completed Final</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>AllActions Completed successfully</td>
+      <td>None</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Needed</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>AutomationFilter Processed</td>
+      <td>Required</td>
+      <td>Final Response Successfully ESCALATED</td>
+      <td>Successfully Completed Final</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+ <h2>Discovered Cluster wise percentage:-</h2>
+<img src="./graphs/problematicDonet.png" alt="Graph">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+<img src="./graphs/suspectedDonet.png" alt="Graph">
+
+<br>
+<h2>Discovered Label wise percentage:-</h2>
+<img src="./graphs/problematicBar.png" alt="Graph">
+    <img src="./graphs/suspectedBar.png" alt="Graph">
+
+<br>
+<h2>Timeline view on discovered Label :-</h2>
+<img src="./graphs/issueTimeline.png" alt="Graph">
+<br>
+<img src="./graphs/suspectedalertsTimeline.png" alt="Graph">
+
+
+</body>
+</html>

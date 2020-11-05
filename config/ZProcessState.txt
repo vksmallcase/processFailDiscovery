@@ -1,0 +1,13 @@
+{
+    0 : "None",
+    1: "Enrichment-done",
+    2: "AutomationFilter Processed",
+    3: "AutomationFilter OutSide ServiceHrs",
+    12: "AllActions Completed successfully",
+    13: "AllActions Completed successfully on Outside ServiceHrs",
+    20: "New state",
+    22: "Ticket or Notifications Actions Failed",
+    -4: "LDS DataSource Down",
+    -10: "event delayed for automation actions",
+    -99: "event was cleared"
+}

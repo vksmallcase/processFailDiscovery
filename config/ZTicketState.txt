@@ -1,0 +1,23 @@
+{
+0: "None",
+1: "Needed",
+2: "InProgress",
+3: "Completed Successfully",
+4: "Failed Retry",
+6: "ScheduledWait ZTicketTime to expire",
+7: "Failed",
+8: "Event Closed at IPC",
+9: "Force ticket update",
+11: "Successfully Completed Final",
+100: "on hold - IPC is Failed to connect",
+101: "OutageHrs Ticketing",
+103: "Held Solved",
+107: "Bad Data",
+121: "Post IPCDown",
+123: "Post IPCDown",
+300: "TicketGroup Change on hold",
+301: "TicketGroup Change required",
+302: "TicketGroup Change still in progress",
+303: "TicketGroup Change completed Successfully",
+307: "TicketGroup Change failed"
+}

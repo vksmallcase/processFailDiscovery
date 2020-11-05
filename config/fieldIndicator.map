@@ -1,0 +1,4 @@
+ZProcessState=Enrichment
+ZHNotifyState=Notification
+ZTicketState=AutoTicket
+ZGenericActionState=AutoResolution

@@ -1,0 +1,9 @@
+{
+31: "Remediation is required",
+32: "A Remediation is INPROGRESS",
+33: "A Remediation has been accepted",
+34: "CREATE fail - retry in-progress",
+35: "CREATE request failed",
+311: "Final Response Successfully RESOLVED",
+312: "Final Response Successfully ESCALATED"
+}
