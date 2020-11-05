@@ -4,7 +4,7 @@ Semi-supervised machine learning to derive actionable insight by reading histori
 
 ![concept](https://github.com/vishnuk88/processFailDiscovery/blob/master/img/concept.png)
 
-# # Solution description:-
+## Solution description:-
 
 - A python code takes input from the CSV file of the alert dump and generates labeled clusters automatically using machine learning models. 
 - Affected clusters will be showcased under separate output files  suspectedProblematic.csv and Problematic.csv
@@ -15,7 +15,7 @@ Semi-supervised machine learning to derive actionable insight by reading histori
 
 ![flow](https://github.com/vishnuk88/processFailDiscovery/blob/master/img/flow.png)
 
-# # Deployment Instructions:-
+## Deployment Instructions:-
 
 1. Installation – Download the code and setup env locally using the command 
     pip install -r notes/requirements.txt.
@@ -32,7 +32,7 @@ Eg:-'Serial','FirstOccurrence','LastOccurrence','Deletedat','ZProcessState',,'ZT
 
 5.  All set ready to use now.
 
-# # Usage Instructions:-
+## Usage Instructions:-
 
 1. Discovery – Run the failureDiscovery.py code.
     Output  – generates CSV files at the output directory where it contains cluster information and problematic areas description.
@@ -49,9 +49,10 @@ Eg:-'Serial','FirstOccurrence','LastOccurrence','Deletedat','ZProcessState',,'ZT
 
 5.  All set to use now, this can now be integrated to Netcool real-time alarms via Netcool impact policy.
 
-6. Example output - curl -k -u vk:hi https://127.0.0.1:5001/predict/5,312,1,40
-{
+6. Example output - 
+  curl -k -u <User>:<Password> https://127.0.0.1:5001/predict/5,312,1,40
+  {
   "ProblemType": "Timeout Ticketing issue",
   "Cluster": 16,
   "predicted": “Ok”
-}
+  }
