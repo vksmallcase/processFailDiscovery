@@ -31,7 +31,7 @@ variables.pop()
 
 X_train, X_test, y_train, y_test = train_test_split(dfClassify[variables], dfClassify['Cluster'], test_size=0.3,random_state=109)
 
-tree = DecisionTreeClassifier()
+tree = DecisionTreeClassifier(criterion="gini",max_depth=5)
 DTModel = tree.fit(X_train, y_train)
 DTPred = tree.predict(X_test)
 joblib.dump(DTModel, model_file)
